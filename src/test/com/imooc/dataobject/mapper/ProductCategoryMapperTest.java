@@ -28,6 +28,12 @@ public class ProductCategoryMapperTest {
         productCategories.forEach(n -> System.out.println(n.toString()));
     }
 
+    @Test
+    public void delCategroty() {
+        int categoryId = 3;
+        int i = mapper.deleteByPrimaryKey(categoryId);
+        Assert.assertEquals(1, i);
+    }
 
     @Test
     public void insertCategory() {
