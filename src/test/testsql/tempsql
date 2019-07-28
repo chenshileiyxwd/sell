@@ -1,0 +1,15 @@
+
+select *
+from sell.order_detail;
+select count(*)
+from sell.seller_info alias;
+
+select *
+from sell.product_category;
+
+show create table sell.product_category;
+
+select *
+from sell.product_category;
+# insert into leidatabase.person (name, age, school)
+# values ('csl', '30', 'buaa');
