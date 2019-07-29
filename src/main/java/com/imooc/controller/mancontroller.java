@@ -2,10 +2,14 @@ package com.imooc.controller;
 
 import com.imooc.dataobject.mapper.ProductCategoryMapper;
 import com.pojo.ProductCategory;
+import com.pojo.ProductCategoryExample;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
 
 /**
  * @ClassName mancontroller
@@ -17,14 +21,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 @SpringBootApplication
 public class mancontroller {
+    @Autowired
     private ProductCategoryMapper mapper;
+
     @RequestMapping("/index")
     public String gotoIndexPage() {
         return "index";
     }
 
     @RequestMapping("/index/name")
-    public String gotoNamePage() {
+    public String
+    gotoNamePage() {
         return "namelist";
     }
 
@@ -33,5 +40,15 @@ public class mancontroller {
     public ProductCategory getcate(Integer categoryId) {
         ProductCategory productCategory = mapper.selectByPrimaryKey(categoryId);
         return productCategory;
+    }
+
+    @RequestMapping("/getallcat")
+    @ResponseBody
+    public List<ProductCategory> getall() {
+        ProductCategoryExample example = new ProductCategoryExample();
+        ProductCategoryExample.Criteria criteria = example.createCriteria();
+        criteria.andCategoryIdGreaterThan(0);
+        List<ProductCategory> productCategories = mapper.selectByExample(example);
+        return productCategories;
     }
 }

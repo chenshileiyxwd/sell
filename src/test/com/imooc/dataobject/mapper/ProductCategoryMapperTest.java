@@ -38,8 +38,8 @@ public class ProductCategoryMapperTest {
     @Test
     public void insertCategory() {
         ProductCategory productCategory = new ProductCategory();
-        productCategory.setCategoryName("cat1");
-        productCategory.setCategoryType(102);
+        productCategory.setCategoryName("cat2");
+        productCategory.setCategoryType(103);
         int insert = mapper.insert(productCategory);
         Assert.assertEquals(1, insert);
     }
