@@ -1,5 +1,6 @@
 package com.imooc.controller;
 
+import com.imooc.dataobject.mapper.MultiTabQryMapper;
 import com.imooc.dataobject.mapper.OrderDetailMapper;
 import com.imooc.dataobject.mapper.OrderMasterMapper;
 import com.pojo.OrderDetail;
@@ -9,6 +10,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName OrderMasterController
@@ -24,11 +28,21 @@ public class OrderMasterController {
     private OrderMasterMapper orderMastermapper;
     @Autowired
     private OrderDetailMapper orderDetailMapper;
-
+    @Autowired
+    private MultiTabQryMapper multiTabQryMapper;
     @RequestMapping("/insertOrderMaster")
     @ResponseBody
     public void insertOrderMasterAndDetail(OrderMaster orderMaster, OrderDetail orderDetail) {
         orderMastermapper.insert(orderMaster);
         orderDetailMapper.insert(orderDetail);
     }
+
+    @RequestMapping("/multiOrderQry")
+    @ResponseBody
+    public List<Map<String, Object>> multiQry(String buyerName) {
+        List<Map<String, Object>> maps = multiTabQryMapper.qryOrderMasterAndDetailByBuyerName(buyerName);
+        return maps;
+    }
+
+
 }
