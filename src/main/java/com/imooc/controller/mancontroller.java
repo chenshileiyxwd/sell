@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -35,10 +36,10 @@ public class mancontroller {
         return "namelist";
     }
 
-    @RequestMapping("/index/getAllCategory/{categoryId}")
+    @RequestMapping("/index/getAllCategory")
     @ResponseBody
-    public ProductCategory getcate(Integer categoryId) {
-        ProductCategory productCategory = mapper.selectByPrimaryKey(categoryId);
+    public ProductCategory getcate(@RequestParam("categoryId") Integer id) {
+        ProductCategory productCategory = mapper.selectByPrimaryKey(id);
         return productCategory;
     }
 
