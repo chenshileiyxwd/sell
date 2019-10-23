@@ -1,4 +1,4 @@
-package java.com.imooc.test;
+package com.imooc.test;
 
 
 import org.junit.Test;
@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.ArrayList;
+import java.util.Date;
 
 /**
  * @ClassName usualtest
@@ -18,24 +18,43 @@ import java.util.ArrayList;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class usualtest {
+
+    private Date date;
+
     @Test
     public void test() {
-        String a = "s,d,f,asdf";
-        ArrayList<Object> list = new ArrayList<>();
-        list.add("a");
-        list.add("3");
-        list.add("2");
-        System.out.println(list.contains(3));
+        int sum = 100000;
+        for (int i = 0; i < sum; i++) {
+            if (i % 2 == 1 &&
+                    i % 3 == 0 &&
+                    i % 4 == 1 &&
+                    (i + 1) % 5 == 0 &&
+                    i % 6 == 3 &&
+                    i % 7 == 0 &&
+                    i % 8 == 1 &&
+                    i % 9 == 0
+            ) {
+                System.out.println("i = " + i);
+            }
+        }
+
+
     }
 
 
     @Test
     public void getname() {
-        ArrayList<Integer> ints = new ArrayList<>();
-        ints.add(1);
-        ints.add(2);
-        ints.add(3);
-        ints.add(4);
-        ints.forEach(n-> System.out.println(n.toString()));
+        int arr[] = {1, 5, 6, 3, 2};
+        for (int i = 0; i < arr.length - 1; i++) {
+            int temp;
+            if (arr[i] > arr[i + 1]) {
+                temp = arr[i + 1];
+                arr[i + 1] = arr[i];
+                arr[i] = temp;
+            }
+        }
+        System.out.println("arr = " + arr);
+
+
     }
 }

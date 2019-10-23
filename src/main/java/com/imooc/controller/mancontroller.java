@@ -5,12 +5,11 @@ import com.pojo.ProductCategory;
 import com.pojo.ProductCategoryExample;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @ClassName mancontroller
@@ -19,7 +18,7 @@ import java.util.List;
  * @Date 2019/5/23 22:44
  * @Version 1.0
  **/
-@Controller
+@RestController
 @SpringBootApplication
 public class mancontroller {
     @Autowired
@@ -37,19 +36,24 @@ public class mancontroller {
     }
 
     @RequestMapping("/index/getAllCategory")
-    @ResponseBody
     public ProductCategory getcate(@RequestParam("categoryId") Integer id) {
         ProductCategory productCategory = mapper.selectByPrimaryKey(id);
         return productCategory;
     }
 
     @RequestMapping("/getallcat")
-    @ResponseBody
     public List<ProductCategory> getall() {
         ProductCategoryExample example = new ProductCategoryExample();
         ProductCategoryExample.Criteria criteria = example.createCriteria();
         criteria.andCategoryIdGreaterThan(0);
         List<ProductCategory> productCategories = mapper.selectByExample(example);
         return productCategories;
+    }
+    @RequestMapping("/getmap")
+     public Map<String, String> testMap() {
+        HashMap<String, String> map = new HashMap<>();
+        map.put("1", "1");
+        map.put("2", "2");
+        return map;
     }
 }

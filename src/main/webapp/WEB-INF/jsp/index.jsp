@@ -11,7 +11,7 @@
     <title>陈氏门宗</title>
 </head>
 <body>
-    <h1>欢迎来到陈氏门宗家谱主123页</h1>
+    <h1>sell main page</h1>
     <button onclick="alert('大2324   家好')">登陆</button>
     <a href="/sell/index/name">跳到名称页面</a>
 

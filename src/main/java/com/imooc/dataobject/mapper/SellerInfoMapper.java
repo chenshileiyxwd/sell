@@ -2,8 +2,9 @@ package com.imooc.dataobject.mapper;
 
 import com.pojo.SellerInfo;
 import com.pojo.SellerInfoExample;
-import java.util.List;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface SellerInfoMapper {
     int countByExample(SellerInfoExample example);
@@ -13,6 +14,8 @@ public interface SellerInfoMapper {
     int deleteByPrimaryKey(String id);
 
     int insert(SellerInfo record);
+
+    int insertSellerInfoBatch(List<SellerInfo> sellerInfoListlist);
 
     int insertSelective(SellerInfo record);
 

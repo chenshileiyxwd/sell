@@ -7,9 +7,9 @@ import com.pojo.OrderDetail;
 import com.pojo.OrderMaster;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Map;
@@ -21,7 +21,7 @@ import java.util.Map;
  * @Date 2019/7/29 20:05
  * @Version 1.0
  **/
-@Controller
+@RestController
 @SpringBootApplication
 public class OrderMasterController {
     @Autowired
