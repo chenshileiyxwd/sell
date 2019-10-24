@@ -1,5 +1,7 @@
 package com.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class ProductCategory {
@@ -8,9 +10,10 @@ public class ProductCategory {
     private String categoryName;
 
     private Integer categoryType;
-
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8", locale = "zh")
+    
     private Date createTime;
-
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8", locale = "zh")
     private Date updateTime;
 
     public Integer getCategoryId() {

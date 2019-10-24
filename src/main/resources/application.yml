@@ -30,8 +30,6 @@ logging:
   pattern:
     console: "%d - %msg%n"
   path: d:/spring-boot-log/
-  level: debug
-
 mybatis:
   mapper-locations: classpath:mapper/mybatis/*.xml
   configuration:
