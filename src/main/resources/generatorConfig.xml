@@ -54,5 +54,6 @@
         <!--<table schema="sell" tableName="order_master"></table>-->
         <!--<table schema="sell" tableName="product_info"></table>-->
         <!--<table schema="sell" tableName="seller_info"></table>-->
+        <!--<table schema="sell" tableName="person"></table>-->
     </context>
 </generatorConfiguration>

@@ -6,4 +6,4 @@ from sell.order_detail;
 select * from sell.seller_info order  by openid desc;
 select count(*) from sell.seller_info;
 
-delete from sell.seller_info ;
+select * from sell.person;

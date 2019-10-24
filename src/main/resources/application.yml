@@ -26,14 +26,15 @@ server:
           max-wait: 300ms
           max-idle: 16
           min-idle: 8
-#logging:
-#  pattern:
-#    console: "%d - %msg%n"
-#  path: d:/spring-boot-log/
-#  level: debug
+logging:
+  pattern:
+    console: "%d - %msg%n"
+  path: d:/spring-boot-log/
+  level: debug
+
 mybatis:
   mapper-locations: classpath:mapper/mybatis/*.xml
   configuration:
-#    配置打印mybatis的sql语句
+    #    配置打印mybatis的sql语句
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 #  file: d:/spring-boot-log/sell/ (该配置与path效果一样，选其一配置即可)
