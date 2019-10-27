@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -37,7 +38,13 @@ public class mancontroller {
 
     @RequestMapping("/index/getAllCategory")
     public ProductCategory getcate(@RequestParam("categoryId") Integer id) {
-        ProductCategory productCategory = mapper.selectByPrimaryKey(id);
+//        ProductCategory productCategory = mapper.selectByPrimaryKey(id);
+        ProductCategory productCategory = new ProductCategory();
+        productCategory.setCategoryType(1);
+        productCategory.setCategoryName("sdfs");
+        productCategory.setCategoryId(1);
+        productCategory.setCreateTime(new Date());
+        productCategory.setUpdateTime(new Date());
         return productCategory;
     }
 
