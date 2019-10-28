@@ -50,6 +50,7 @@ public class LoginFilter implements Filter {
         if ("csl".equals(username)) {
             filterChain.doFilter(servletRequest, servletResponse);
         } else {
+            resp.sendRedirect("/error.html");
             return ;
         }
     }
