@@ -4,6 +4,8 @@ spring:
     username: mrleier
     password: 198968
     url: jdbc:mysql://127.0.0.1/sell?characterEncoding=utf-8&useSSL=false&serverTimezone=UTC
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,classpath:/templates/
   jpa:
     show-sql: true
   mvc:
@@ -12,9 +14,11 @@ spring:
       suffix: .jsp
   banner:
     location: banner.txt
+  redis:
+    timeout:
 server:
   servlet:
-#    context-path: /sell
+  #    context-path: /sell
   port: 8080
   spring:
     redis:
@@ -37,4 +41,4 @@ mybatis:
   configuration:
     #    配置打印mybatis的sql语句
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-#  file: d:/spring-boot-log/sell/ (该配置与path效果一样，选其一配置即可)
+#  file: d:/spring-boot-log/sell/ (该配置与path效果一样，选其一配置即可):
