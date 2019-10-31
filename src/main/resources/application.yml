@@ -42,4 +42,3 @@ mybatis:
     #    配置打印mybatis的sql语句
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 #  file: d:/spring-boot-log/sell/ (该配置与path效果一样，选其一配置即可):
-# 修改dev分支配置文件
