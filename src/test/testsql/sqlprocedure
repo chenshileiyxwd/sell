@@ -1,0 +1,28 @@
+-- 查询已创建的所有的存储过程
+-- show procedure status;
+-- 创建查询存储过程
+-- create  procedure qryOrder_master(in id int)
+-- begin
+-- 	select * from sell.order_master where order_id=id;
+-- end ;
+-- 调用存储过程
+-- call qryOrder_master(1);
+-- 删除存储过程
+drop procedure loopInsertBatchOrderMaster;
+-- 创建循环插入数据的存储过程
+create procedure loopInsertBatchOrderMaster(in param int)
+begin
+	declare var int;
+	set var=0;
+	while var<param do
+	insert into sell.person (name, mobile) values (var,var);
+	set var=var+1;
+	end while;
+end ;
+-- 调用存储过程
+call sell.loopInsertBatchOrderMaster(100000);
+explain select * from sell.person where mobile>;
+select * from sell.person ;
+-- 查看执行计划
+explain select count(*) from sell.person;
+-- delete from sell.person;
