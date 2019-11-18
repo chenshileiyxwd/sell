@@ -3,12 +3,11 @@ from sell.order_master;
 select *
 from sell.order_detail;
 
-select * from sell.seller_info order  by openid desc;
+select * from sell.seller_info where update_time='2019-10-29 23:52:55' order  by openid desc;
+select * from sell.seller_info where id='1e8e0301-1eaa-41cc-a690-5183f385' order  by openid desc;
 select count(*) from sell.seller_info;
-select * from sell.seller_info where id='1e8e0301-1eaa-41cc-a690-5183f385';
-
-select * from sell.seller_info where temp is null;
-
-update sell.seller_info set temp = null where id='1e8e0301-1eaa-41cc-a690-5183f385';
 
 select * from sell.person;
+
+select * from tb_item where barcode is null ;
+select count(*) from tb_item alias where alias.barcode is not null ;

@@ -18,14 +18,11 @@ import java.util.Date;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class usualtest {
-
-    private Date date;
-
     @Test
     public void test() {
         int sum = 100000;
         for (int i = 0; i < sum; i++) {
-            if (i % 2 == 1 &&
+                if (i % 2 == 1 &&
                     i % 3 == 0 &&
                     i % 4 == 1 &&
                     (i + 1) % 5 == 0 &&
@@ -33,6 +30,7 @@ public class usualtest {
                     i % 7 == 0 &&
                     i % 8 == 1 &&
                     i % 9 == 0
+
             ) {
                 System.out.println("i = " + i);
             }
@@ -40,6 +38,9 @@ public class usualtest {
 
 
     }
+
+
+    private Date date;
 
 
     @Test
@@ -53,8 +54,12 @@ public class usualtest {
                 arr[i] = temp;
             }
         }
+        System.out.println("vim test");
         System.out.println("arr = " + arr);
 
-
     }
+
+
 }
+
+
