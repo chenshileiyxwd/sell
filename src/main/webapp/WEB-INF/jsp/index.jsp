@@ -13,7 +13,7 @@
 <body>
     <h1>sell main page for devtools add test</h1>
     <button onclick="alert('大2324   家好')">登陆</button>
-    <a href="/sell/index/name">跳到名称页面</a>
+    <a href="/index/namelist">跳到名称页面</a>
 
 </body>
 </html>

@@ -29,6 +29,12 @@ public class RedisTest {
     private StringRedisTemplate redisTemplate;
 
     @Test
+    public void testChannel() {
+        redisTemplate.convertAndSend("csl_channel", "my first channel");
+    }
+
+
+    @Test
     public void testInsert() throws JSONException {
 //        redisTemplate.opsForValue().set("myname", "陈世磊");
         redisTemplate.delete("te    }\nstname");

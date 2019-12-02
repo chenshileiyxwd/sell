@@ -26,6 +26,7 @@ public class LoginFilter implements Filter {
     }
 
     /**
+     *
      * 容器销毁的时候调用
      */
     @Override
@@ -47,11 +48,11 @@ public class LoginFilter implements Filter {
         HttpServletRequest req = (HttpServletRequest) servletRequest;
         HttpServletResponse resp = (HttpServletResponse) servletResponse;
         String username = req.getParameter("username");
-        if ("csl".equals(username)) {
-            filterChain.doFilter(servletRequest, servletResponse);
-        } else {
-            resp.sendRedirect("/error.html");
-            return ;
-        }
+        filterChain.doFilter(servletRequest, servletResponse);
+//        if ("csl".equals(username)) {
+//        } else {
+//            resp.sendRedirect("/sell/error.html");
+//            return ;
+//        }
     }
 }

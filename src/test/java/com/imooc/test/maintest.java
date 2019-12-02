@@ -9,8 +9,9 @@ package com.imooc.test;
  **/
 public class maintest implements Runnable {
     static maintest instance1 = new maintest();
-    static maintest instance2= new maintest();
+    static maintest instance2 = new maintest();
     static int i = 0;
+    static int SUM = 10;
 
     public static void main(String[] args) throws InterruptedException {
         Thread t1 = new Thread(instance1);
@@ -20,15 +21,24 @@ public class maintest implements Runnable {
         t1.join();
         t2.join();
         System.out.println("i = " + i);
+        System.out.println("SUM = " + SUM);
     }
 
     @Override
     public void run() {
-        getpp();
+        doAdd();
+        addSome();
     }
-    public static synchronized void getpp() {
+
+    public static synchronized void doAdd() {
         for (int j = 0; j < 100000; j++) {
             i++;
+        }
+    }
+
+    public static void addSome() {
+        for (int k = 0; k < SUM; k++) {
+            SUM++;
         }
     }
 }

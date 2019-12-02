@@ -43,6 +43,4 @@ public class OrderMasterController {
         List<Map<String, Object>> maps = multiTabQryMapper.qryOrderMasterAndDetailByBuyerName(buyerName);
         return maps;
     }
-
-
 }

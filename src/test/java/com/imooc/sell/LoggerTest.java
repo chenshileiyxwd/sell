@@ -21,7 +21,7 @@ public class LoggerTest {
     @Test
     public void test1() {
         String name = "csl";
-        String password = "123456";
+        String password = "aaaabbbccc";
         log.debug("debuger====------......");
         log.info("name:{},password:{}",name,password);
         log.error("error====------......");

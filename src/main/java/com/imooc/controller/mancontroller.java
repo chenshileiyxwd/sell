@@ -14,7 +14,7 @@ import java.util.Map;
 
 /**
  * @ClassName mancontroller
- * @Description TODO
+ * @Description
  * @Author mrleier
  * @Date 2019/5/23 22:44
  * @Version 1.0
@@ -30,11 +30,16 @@ public class mancontroller {
         return "index";
     }
 
-    @RequestMapping("/index/name")
-    public String
-    gotoNamePage() {
+    @RequestMapping("/sell/index/namelist")
+    public String getNameList() {
         return "namelist";
     }
+
+//    @RequestMapping("/index/name")
+//    public String
+//    gotoNamePage() {
+//        return "namelist";
+//    }
 
     @RequestMapping("/index/getAllCategory")
     public ProductCategory getcate(@RequestParam("categoryId") Integer id) {
@@ -63,4 +68,5 @@ public class mancontroller {
         map.put("2", "2");
         return map;
     }
+
 }

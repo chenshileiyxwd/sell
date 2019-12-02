@@ -11,3 +11,11 @@ select * from sell.person;
 
 select * from tb_item where barcode is null ;
 select count(*) from tb_item alias where alias.barcode is not null ;
+select * from tb_item alias where alias.id>5;
+
+
+
+select * from tb_item alias where alias.id > 3 order by alias.id desc;
+
+select * from sell.person order by id desc ;4544554
+

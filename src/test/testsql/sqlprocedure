@@ -21,8 +21,9 @@ begin
 end ;
 -- 调用存储过程
 call sell.loopInsertBatchOrderMaster(100000);
-explain select * from sell.person where mobile>;
-select * from sell.person ;
+select * from sell.person;
+
+
 -- 查看执行计划
 explain select count(*) from sell.person;
 -- delete from sell.person;

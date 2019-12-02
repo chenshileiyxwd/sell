@@ -11,6 +11,17 @@
     <title>名称列表</title>
 </head>
 <body>
-    <h1>陈世磊</h1>
+<h1> 测试一下从json读取相关姓名列表</h1>
+<table>
+    <thead>
+    <tr>
+        <td>name</td>
+        <td>birthday</td>
+    </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+</table>
 </body>
 </html>
