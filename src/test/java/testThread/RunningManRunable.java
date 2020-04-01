@@ -14,9 +14,12 @@ public class RunningManRunable implements Runnable {
         this.name = name;
     }
 
+
     @Override
     public void run() {
         for (int i = 0; i < 100; i++) {
+
+            StringBuffer stringBuffer = new StringBuffer();
             System.out.println(this.name + "跑了" + i + "米");
         }
     }

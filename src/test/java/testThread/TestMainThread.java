@@ -8,6 +8,28 @@ package testThread;
  * @Version 1.0
  **/
 public class TestMainThread {
+    public static void main(String[] args) {
+        String s = "aAcCzZ";
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            System.out.println("c = " + c);
+            System.out.println("((int) c) = " + ((int) c));
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public static void main1(String[] args) throws InterruptedException {
         RunningMan runningMan1 = new RunningMan("陈世磊");
         RunningMan runningMan2 = new RunningMan("leehom");
@@ -19,7 +41,7 @@ public class TestMainThread {
         System.out.println("主线程执行--------------over");
     }
 
-    public static void main(String[] args) {
+    public static void main2(String[] args) {
         RunningManRunable r1 = new RunningManRunable("csl");
         RunningManRunable r2 = new RunningManRunable("leehom");
         RunningManRunable r3 = new RunningManRunable("Jim");
@@ -29,10 +51,5 @@ public class TestMainThread {
         t1.start();
         t2.start();
         t3.start();
-        new Thread(() -> {
-            System.out.println(Thread.currentThread().getName());
-        },"thread1").start();
-        
-
     }
 }

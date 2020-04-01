@@ -1,5 +1,7 @@
 package com.imooc.test;
 
+import java.util.concurrent.CopyOnWriteArrayList;
+
 /**
  * @ClassName maintest
  * @Description
@@ -22,6 +24,11 @@ public class maintest implements Runnable {
         t2.join();
         System.out.println("i = " + i);
         System.out.println("SUM = " + SUM);
+
+        CopyOnWriteArrayList<String> arrayList = new CopyOnWriteArrayList<>();
+        arrayList.add("ds");
+        arrayList.add(1, "sds");
+
     }
 
     @Override

@@ -11,6 +11,7 @@ public class QuickSort {
     }
 
     public static void quickSort(int[] arr, int left, int right) {
+        System.out.println("test");
         if (left > right) {
             /*
              *这里解释一下：例如只有一个数的排序序列，此时i==key==j==1，
