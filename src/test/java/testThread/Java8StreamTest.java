@@ -1,6 +1,7 @@
 package testThread;
 
 import com.imooc.entity.Person;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.*;
@@ -64,7 +65,13 @@ public class Java8StreamTest {
         System.out.println("*********************获取cup核心数量**********************");
         System.out.println(
                 "Runtime.getRuntime().availableProcessors() = " + Runtime.getRuntime().availableProcessors());
-
-
     }
+
+    @Test
+    public void test1() {
+        int ii = 11;
+        Assert.assertEquals(ii, 11);
+    }
+
 }
+

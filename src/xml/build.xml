@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<project name="hellLarrySell">
+    <target name="HelloSell">
+        <echo message="Hello,sell project"/>
+        <echo message="take it easy...."></echo>
+    </target>
+</project>
